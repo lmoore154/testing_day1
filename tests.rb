@@ -1,3 +1,5 @@
+require 'pry'
+
 require 'minitest/autorun'
 
 require './human'
@@ -36,4 +38,36 @@ class CaffeineTest < MiniTest::Test
     assert tsmf.empty?
     assert trevor.alertness > 0.9
   end
+end
+
+
+class EspressoTest < MiniTest::Test
+  def test_espresso_gives_greater_alertness
+    alex = Human.new "Alex"
+    esp = Espresso.new
+    alex.buy esp
+    alex.drink!
+
+    kaylee = Human.new "Kaylee"
+    tsmf = Coffee.new "Coffee"
+    kaylee.buy tsmf
+    kaylee.drink!
+
+    assert alex.alertness > kaylee.alertness
+  end
+
+end
+
+
+class TeaTest < MiniTest::Test
+
+  def test_tea_gives_less_alertness
+    sammy = Human.new "Sammy"
+    tea = Tea.new
+    sammy.buy tea
+    3.times { sammy.drink! }
+
+    assert sammy.alertness < 1
+  end
+
 end
