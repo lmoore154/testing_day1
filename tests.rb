@@ -66,7 +66,7 @@ class TeaTest < MiniTest::Test
     tea = Tea.new
     sammy.buy tea
     3.times { sammy.drink! }
-
+    assert tea.empty?
     assert sammy.alertness < 1
   end
 

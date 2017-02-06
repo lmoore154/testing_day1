@@ -1,4 +1,3 @@
-require './coffee.rb'
 
 class Human
   attr_accessor :name,
@@ -24,13 +23,7 @@ class Human
 
   def drink!
     coffee.amount -= 1
-    if Coffee
-      self.alertness += coffee.alertness
-    elsif Espresso
-      self.alertness += coffee.alertness
-    elsif Tea
-      self.alertness += coffee.alertness
-    end
+    self.alertness += coffee.alertness
   end
 
 end
