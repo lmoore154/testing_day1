@@ -11,19 +11,11 @@ attr_accessor :type, :amount, :alertness
   end
 
   def full?
-    if amount == 3
-      true
-    else
-      false
-    end
+    amount == 3
   end
 
   def empty?
-    if amount == 0
-      true
-    else
-      false
-    end
+    amount == 0
   end
 
 end
@@ -44,4 +36,5 @@ class Tea < Coffee
     @amount = amount
     @alertness = alertness
   end
+
 end
